@@ -1,0 +1,25 @@
+﻿@model IEnumerable<PersonalBlog.Data.BlogPost>
+@using Microsoft.AspNetCore.Identity
+@inject UserManager<IdentityUser> UserManager
+@{
+    ViewData["Title"] = "Index";
+    var user = await UserManager.GetUserAsync(User);
+}
+
+<h1>Index</h1>
+@foreach (var item in Model)
+{
+    <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+    <small>
+        @Html.DisplayFor(modelItem => item.Summary)
+    </small>
+    <p>
+        @Html.DisplayFor(modelItem => item.Body)
+    </p>
+    <small>
+        @user?.Email
+    </small>
+    <div>
+        <br/>
+    </div>
+}
