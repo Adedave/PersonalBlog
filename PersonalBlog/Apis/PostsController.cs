@@ -51,7 +51,7 @@ namespace PersonalBlog.Apis
             post.Title = value.Title;
             post.Summary = value.Summary;
             post.Body = value.Body;
-            post.Author = value.Author;
+            //post.Author = value.Author;
             post.Tags = value.Tags;
 
             _context.BlogPosts.Update(post);

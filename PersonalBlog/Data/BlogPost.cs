@@ -14,8 +14,8 @@ namespace PersonalBlog.Data
         public string Body { get; set; }
         [NotMapped]
         public string[] Tags { get; set; }
-        public int AuthorId { get; set; }
+        //public int AuthorId { get; set; }
         public string UserId { get; set; }
-        public Author Author { get; set; }
+        //public Author Author { get; set; }
     }
 }
