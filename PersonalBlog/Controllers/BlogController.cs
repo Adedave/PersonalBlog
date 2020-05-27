@@ -20,7 +20,9 @@ namespace PersonalBlog.Controllers
         // GET: /<controller>/
         public IActionResult Index()
         {
-            IEnumerable<BlogPost> blogPosts =  context.BlogPosts.ToList();
+            IEnumerable<BlogPost> blogPosts =  context.BlogPosts
+                                                    .OrderByDescending(x => x.DateCreated)
+                                                    .ToList();
             return View(blogPosts);
         }
     }

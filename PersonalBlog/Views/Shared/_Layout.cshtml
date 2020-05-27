@@ -23,7 +23,7 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Personal Blog</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Blog" asp-action="Index">Personal Blog</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -32,10 +32,10 @@
                     <partial name="_LoginPartial" />
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Blog" asp-action="Index">Blog</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Categories" asp-action="Index">Categories</a>
                         </li>
                         @if (SignInManager.IsSignedIn(User))
                         {
@@ -58,6 +58,19 @@
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; @DateTime.Now.Year - Personal Blog - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <div class="float-right">
+                <a href="https://facebook.com"><img src="https://img.icons8.com/fluent/48/000000/facebook-new.png" />
+                @*<img src="~/images/social-icons/facebook.jpg" alt="facebook" />*@
+                </a>
+                <a href="https://twitter.com/OniDavidAde">
+                    <img src="https://img.icons8.com/fluent/48/000000/twitter.png" />            
+    @*<img src="~/images/social-icons/twitter-logo.jpg" alt="twitter" />*@
+                </a>
+                <a href="https://linkedln.com/davidoni">
+                    @*<img src="~/images/social-icons/linkedin.jpg" alt="linkedin" />*@
+                    <img src="https://img.icons8.com/officel/32/000000/linkedin.png" />
+                </a>
+            </div>
         </div>
     </footer>
 

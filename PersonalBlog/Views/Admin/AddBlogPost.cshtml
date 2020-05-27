@@ -1,16 +1,15 @@
-﻿@model PersonalBlog.Data.BlogPost
-
+﻿@model PersonalBlog.Models.BlogPostViewModel
 @{
     ViewData["Title"] = "AddBlogPost";
 }
 
-<h1>AddBlogPost</h1>
+<h1>Add a New Blog Post</h1>
 
 <h4>BlogPost</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="AddBlogPost">
+        <form asp-action="AddBlogPost"  enctype="multipart/form-data" >
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input hidden asp-for="Id" class="form-control" />
             <div class="form-group">
@@ -24,13 +23,22 @@
                 <span asp-validation-for="Summary" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Body" class="control-label"></label>
-                <textarea name="Body"></textarea>
-                
+                <label asp-for="Body" class="control-label">Body:</label>
+                <textarea id="w3review" name="Body" rows="4" cols="50">
+                </textarea>
                 <span asp-validation-for="Body" class="text-danger"></span>
             </div>
             <input hidden asp-for="UserId" class="form-control" />
-
+            
+            <div class="form-group">
+                <label asp-for="Image" class="control-label"></label>
+                <div class="custom-file">
+                    @*<input asp-for="Image" class="custom-file-input" id="customFile">*@
+                    <input type="file" class="form-control-file" name="Image"/>
+                    @*<label class="custom-file-label" for="customFile">Choose file</label>*@
+                </div>
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PersonalBlog.Data;
@@ -9,9 +10,10 @@ using PersonalBlog.Data;
 namespace Personal_blog.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20200527100031_AddedImageProp")]
+    partial class AddedImageProp
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -186,12 +188,6 @@ namespace Personal_blog.Migrations
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Body");
-
-                    b.Property<DateTime>("DateCreated");
-
-                    b.Property<DateTime>("DateDeleted");
-
-                    b.Property<DateTime>("DateUpdated");
 
                     b.Property<string>("Image")
                         .IsRequired();
