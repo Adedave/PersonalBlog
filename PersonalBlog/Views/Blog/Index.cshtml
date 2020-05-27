@@ -7,19 +7,28 @@
 }
 
 <h1>Index</h1>
-@foreach (var item in Model)
-{
-    <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
-    <small>
-        @Html.DisplayFor(modelItem => item.Summary)
-    </small>
-    <p>
-        @Html.DisplayFor(modelItem => item.Body)
-    </p>
-    <small>
-        @user?.Email
-    </small>
-    <div>
-        <br/>
-    </div>
-}
+<div class="row">
+<div class="col-8">
+    @foreach (var item in Model)
+    {
+        <h2>@Html.DisplayFor(modelItem => item.Title)</h2>
+        <small>
+            @Html.DisplayFor(modelItem => item.Summary)
+        </small>
+        <p>
+            @Html.DisplayFor(modelItem => item.Body)
+        </p>
+        <small>
+            @user?.Email
+        </small>
+        <br />
+        <hr />
+        <div>
+            <br/>
+        </div>
+    }
+</div>
+<div class="col-4">
+
+</div>
+</div>
